@@ -18,7 +18,6 @@ interface NewsAPI {
         @Query("apiKey") apiKey: String,
         @Query("category") category: String
     ): APIResponse
-
     @GET("top-headlines")
     suspend fun getTopHeadlines(
         @Query("apiKey") apiKey: String,

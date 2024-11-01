@@ -4,7 +4,6 @@ import android.content.Intent
 import android.content.Intent.ACTION_SEND
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -23,7 +22,6 @@ fun DetailsScreenWeb(
 
     Column(
         modifier = Modifier.fillMaxSize()
-            .statusBarsPadding()
     ) {
         DetailsTopBar(
 

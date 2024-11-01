@@ -31,9 +31,14 @@ fun NavGraph(
 
     val navController = rememberNavController()
 
-    var showToast by remember { mutableStateOf(false) }
+    var showToast by remember {
+        mutableStateOf(false)
+    }
 
-    var backPressState by remember { mutableStateOf<BackPress>(BackPress.Idle) }
+    var backPressState by remember {
+        mutableStateOf<BackPress>(BackPress.Idle)
+    }
+
     val context = LocalContext.current
 
     if(showToast){

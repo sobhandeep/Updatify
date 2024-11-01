@@ -2,6 +2,7 @@ package com.sobhandeep.updatify.presentation.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.basicMarquee
+import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
@@ -17,12 +19,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -35,6 +40,7 @@ import com.sobhandeep.updatify.util.Dimensions.categoryPadding
 import com.sobhandeep.updatify.util.Dimensions.mediumPadding1
 import com.sobhandeep.updatify.util.Dimensions.mediumPadding3
 import java.util.Locale
+import kotlin.math.roundToInt
 
 @Composable
 fun HomeScreen(
@@ -88,11 +94,34 @@ fun HomeScreen(
         }
     }
 
+    val offsetX by remember {
+        mutableFloatStateOf(0f)
+    }
+
+    val offsetY by remember {
+        mutableFloatStateOf(0f)
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(top = mediumPadding3)
-//            .statusBarsPadding()
+            .offset {
+                IntOffset(offsetX.roundToInt(), offsetY.roundToInt())
+            }
+            .pointerInput(Unit){
+                detectDragGestures { change, dragAmount ->
+                    change.consume()
+
+                    val (x) = dragAmount
+
+                    when {
+                        x < 0 -> {
+                            navigateToSearch()
+                        }
+                    }
+                }
+            }
     ) {
 
         Image(

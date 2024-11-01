@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.sobhandeep.updatify.domain.model.Article
 import com.sobhandeep.updatify.presentation.composables.DetailsTopBar
+import com.sobhandeep.updatify.presentation.composables.DetailsWebView
 
 @Composable
 fun DetailsScreenWeb(
@@ -49,32 +50,4 @@ fun DetailsScreenWeb(
 
         DetailsWebView(url = article.url)
     }
-}
-
-@SuppressLint("SetJavaScriptEnabled")
-@Composable
-fun DetailsWebView(
-    url: String
-){
-    AndroidView(
-        factory = {
-
-            WebView(it).apply {
-                layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT
-                )
-
-                webChromeClient = WebChromeClient()
-
-                settings.javaScriptEnabled = true
-
-                loadUrl(url)
-            }
-        },
-
-        update = {
-            it.loadUrl(url)
-        }
-    )
 }

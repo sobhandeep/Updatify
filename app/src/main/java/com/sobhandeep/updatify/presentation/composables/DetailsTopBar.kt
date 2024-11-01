@@ -20,7 +20,6 @@ import com.sobhandeep.updatify.R
 fun DetailsTopBar(
     isBookmarked: Boolean,
     onBookmarkClick: () -> Unit,
-    onBrowserClick: () -> Unit,
     onShareClick: () -> Unit,
     onBackClick: () -> Unit,
 ){
@@ -59,14 +58,6 @@ fun DetailsTopBar(
 
                 Icon(
                     imageVector = Icons.Default.Share,
-                    contentDescription = null
-                )
-            }
-
-            IconButton(onClick = onBrowserClick){
-
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_network),
                     contentDescription = null
                 )
             }

@@ -24,7 +24,7 @@ import com.sobhandeep.updatify.presentation.bookmark.BookmarkScreen
 import com.sobhandeep.updatify.presentation.bookmark.BookmarkViewModel
 import com.sobhandeep.updatify.presentation.composables.BottomNavigationBar
 import com.sobhandeep.updatify.presentation.details.DetailsEvent
-import com.sobhandeep.updatify.presentation.details.DetailsScreen
+import com.sobhandeep.updatify.presentation.details.DetailsScreenWeb
 import com.sobhandeep.updatify.presentation.details.DetailsViewModel
 import com.sobhandeep.updatify.presentation.home.HomeScreen
 import com.sobhandeep.updatify.presentation.home.HomeViewModel
@@ -160,7 +160,7 @@ fun BottomNavigator(){
                 }
 
                 navController.previousBackStackEntry?.savedStateHandle?.get<Article>("article")?.let { article ->
-                    DetailsScreen(
+                    DetailsScreenWeb(
                         article = article,
                         event = viewModel::onEvent,
                         navigateUp = {

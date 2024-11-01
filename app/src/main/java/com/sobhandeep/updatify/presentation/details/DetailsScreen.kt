@@ -1,18 +1,13 @@
 package com.sobhandeep.updatify.presentation.details
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.Intent.ACTION_SEND
-import android.view.ViewGroup
-import android.webkit.WebChromeClient
-import android.webkit.WebView
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.viewinterop.AndroidView
 import com.sobhandeep.updatify.domain.model.Article
 import com.sobhandeep.updatify.presentation.composables.DetailsTopBar
 import com.sobhandeep.updatify.presentation.composables.DetailsWebView

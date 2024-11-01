@@ -8,6 +8,8 @@ object Dimensions {
 
     val mediumPadding2 = 30.dp
 
+    val mediumPadding3  = 55.dp
+
     val IndicatorSize = 14.dp
 
     val indicatorWidth =    52.dp
@@ -21,8 +23,6 @@ object Dimensions {
     val smallIconSize = 11.dp
 
     val iconSize = 20.dp
-
-    val articleImageHeight = 248.dp
 
     val bottomElevation = 10.dp
 

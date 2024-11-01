@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -34,6 +33,7 @@ import com.sobhandeep.updatify.presentation.composables.CategoryChip
 import com.sobhandeep.updatify.presentation.composables.SearchBar
 import com.sobhandeep.updatify.util.Dimensions.categoryPadding
 import com.sobhandeep.updatify.util.Dimensions.mediumPadding1
+import com.sobhandeep.updatify.util.Dimensions.mediumPadding3
 import java.util.Locale
 
 @Composable
@@ -91,8 +91,8 @@ fun HomeScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = mediumPadding1)
-            .statusBarsPadding()
+            .padding(top = mediumPadding3)
+//            .statusBarsPadding()
     ) {
 
         Image(

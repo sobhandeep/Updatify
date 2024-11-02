@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.sobhandeep.updatify.domain.model.Article
 import com.sobhandeep.updatify.presentation.composables.DetailsTopBar
+import com.sobhandeep.updatify.presentation.composables.DetailsTopBarExp
 import com.sobhandeep.updatify.presentation.composables.DetailsWebView
 
 @Composable
@@ -23,7 +24,7 @@ fun DetailsScreenWeb(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        DetailsTopBar(
+        DetailsTopBarExp (
 
             onShareClick = {
                 Intent(ACTION_SEND).also {
@@ -41,6 +42,8 @@ fun DetailsScreenWeb(
             isBookmarked = viewModel.isBookmarked.value || article.isBookmarked
         )
 
-        DetailsWebView(url = article.url)
+        DetailsWebView(
+            url = article.url
+        )
     }
 }

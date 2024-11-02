@@ -36,7 +36,8 @@ import kotlin.math.roundToInt
 fun BookmarkScreen(
     state: BookmarkState,
     navigateToDetails: (Article) -> Unit,
-    navigateToHome: () -> Unit
+    navigateToHome: () -> Unit,
+    navigateToSearch: () -> Unit
 ){
 
     val offsetX by remember {
@@ -62,7 +63,7 @@ fun BookmarkScreen(
 
                     when {
                         x > 0 -> {
-                            navigateToHome()
+                            navigateToSearch()
                         }
                     }
                 }

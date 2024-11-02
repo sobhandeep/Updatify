@@ -1,6 +1,7 @@
 package com.sobhandeep.updatify.presentation.composables
 
 import android.annotation.SuppressLint
+import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -13,13 +14,15 @@ fun DetailsWebView(
     url: String
 ){
     AndroidView(
-        factory = {
+        factory = { context ->
 
-            WebView(it).apply {
+            WebView(context).apply {
                 layoutParams = ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 )
+
+                setLayerType(View.LAYER_TYPE_SOFTWARE, null)
 
                 webChromeClient = WebChromeClient()
 

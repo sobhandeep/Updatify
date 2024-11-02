@@ -242,6 +242,12 @@ fun BottomNavigator(){
                             navController = navController,
                             route = Route.HomeScreen.route
                         )
+                    },
+                    navigateToSearch = {
+                        navigateTab(
+                            navController = navController,
+                            route = Route.SearchScreen.route
+                        )
                     }
                 )
             }

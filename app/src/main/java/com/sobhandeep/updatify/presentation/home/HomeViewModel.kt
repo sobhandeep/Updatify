@@ -16,11 +16,11 @@ class HomeViewModel @Inject constructor(
 ): ViewModel() {
 
     val news = newsInstances.getNews(
-        sources = listOf("bbc-news","abc-news","al-jazeera-english", "cnn")
+        sources = listOf("bbc-news","abc-news","al-jazeera-english", "cnn", "google-news-in")
     ).cachedIn(viewModelScope)
 
     val topHeadlines = newsInstances.getTopHeadlines(
-        sources = listOf("bbc-news","abc-news","al-jazeera-english", "cnn")
+        sources = listOf("bbc-news","abc-news","al-jazeera-english", "cnn", "google-news-in")
     )
 
     fun newsByCategory(category: String): Flow<PagingData<Article>> {

@@ -115,7 +115,7 @@ fun BottomNavigator(){
                 enterTransition = {
                     slideIntoContainer(
                         AnimatedContentTransitionScope.SlideDirection.Right,
-                        tween(1000)
+                        tween(400)
                     )
                 },
             ) {
@@ -147,12 +147,12 @@ fun BottomNavigator(){
                         Route.HomeScreen.route ->
                             slideIntoContainer(
                             AnimatedContentTransitionScope.SlideDirection.Left,
-                            tween(1000)
+                            tween(400)
                         )
                     Route.BookmarkScreen.route ->
                         slideIntoContainer(
                             AnimatedContentTransitionScope.SlideDirection.Right,
-                            tween(1000)
+                            tween(400)
                         )
                     else ->
                         null
@@ -218,7 +218,7 @@ fun BottomNavigator(){
                 enterTransition = {
                     slideIntoContainer(
                         AnimatedContentTransitionScope.SlideDirection.Left,
-                        tween(1000)
+                        tween(400)
                     )
                 },
             ) {

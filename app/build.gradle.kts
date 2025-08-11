@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "com.sobhandeep.updatify"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.sobhandeep.updatify"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0.0"
 
@@ -34,8 +34,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
-    kotlinOptions {
-        jvmTarget = "21"
+    kotlin {
+        target {
+            compilerOptions {
+                optIn.add("kotlin.RequiresOptIn")
+            }
+        }
     }
     buildFeatures {
         compose = true
